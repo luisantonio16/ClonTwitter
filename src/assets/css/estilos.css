@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*Header de la red social*/
+.header{
+    background-color: #0D1FEA;
+    width: 100%;
+    height: 70px;
+}
+
+/*Nav de la red social*/
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 10px;
+    color: #fff;
+}
+
+.nav-logo{
+ display: block;
+ margin: 10px 0;
+}
+.nav-logo h2{
+    font-size: 25px;
+    font-weight: 700;
+}
+.nav-buttons{
+    display: block;
+    margin: 10px 0;
+}
+.nav-buttons a{
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 12px;
+    transition: all .1ms ease;
+    border-radius: 10px;
+}
+.nav-buttons a:hover{
+   background-color: #040c68;
+}
+.nav-buttons a i{
+    margin: 0 5px;
+}
+.nav-items{
+    font-size:14px;
+    font-weight: 500;
+}
+
+/*contenido-Principal*/
+.contenido-Principal{
+    display: grid;
+    width: 100%;
+    padding: 15px;
+    border: 2px solid green;
+    margin: 20px auto;
+    grid-template-columns:  auto;
+}
+
+/*Registrarse*/
+.Registrarse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 500px;
+}
+.Registrarse-container{
+    width: 350px;
+    height: 500px;
+   box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+   position: relative;
+}
+.Cabeza{
+    width: 100%;
+    background-color: #0D1FEA;
+    height: 200px;
+    border-radius: 0 0 50px 50px;
+    margin-bottom:5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Cabeza h2{
+    font-size: 25px;
+    color: #fff;
+    font-weight: 900;
+}
+.Registrarse-title{
+    text-align: center;
+    color: #0D1FEA;
+    margin: 10px 0;
+}
+
+.Registrarse-form{
+    background-color: #fff;
+    position: absolute;
+    margin: auto;
+    top: 140px;
+    right: 20px;
+    width:300px;
+    height: 200px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+
+}
