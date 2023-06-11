@@ -73,6 +73,7 @@
     align-items: center;
     margin: auto;
     width: 500px;
+    grid-column: auto;
 }
 .Registrarse-container{
     width: 350px;
