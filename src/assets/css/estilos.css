@@ -61,7 +61,6 @@
     display: grid;
     width: 100%;
     padding: 15px;
-    border: 2px solid green;
     margin: 20px auto;
     grid-template-columns:  auto;
 }
@@ -72,19 +71,19 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 500px;
-    grid-column: auto;
+    width: 70%;
+    grid-column: 1/1;
 }
 .Registrarse-container{
-    width: 350px;
-    height: 500px;
+    width: 40%;
+    height: 600px;
    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
    position: relative;
 }
 .Cabeza{
     width: 100%;
     background-color: #0D1FEA;
-    height: 200px;
+    height: 250px;
     border-radius: 0 0 50px 50px;
     margin-bottom:5px;
     display: flex;
@@ -106,12 +105,67 @@
     background-color: #fff;
     position: absolute;
     margin: auto;
-    top: 140px;
-    right: 20px;
-    width:300px;
-    height: 200px;
+    top: 160px;
+    right: 5%;
+    width:90%;
+    height: auto;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
     padding: 10px;
     border-radius: 10px;
 
+}
+
+.Registrarse-form input[type="text"],
+input[type="password"]{
+     width: 90%;
+     display: block;
+     justify-content: center;
+     align-items: center;
+     margin:12px  auto;
+     padding: 8px 10px;
+     border: none;
+     border-bottom: 1px solid #0d20ea79;
+     font-size: 14px;
+     outline: none;
+
+}
+.Registrarse-form input[type="submit"]{
+    display: block;
+    justify-content: center;
+     align-items: center;
+     margin: auto;
+    width: 90%;
+    border: none;
+    border-radius: 20px;
+    background-color: #0D1FEA;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+}
+.cuenta{
+    position: absolute;
+    bottom: 0;
+    right:28%;
+    display: block;
+    text-align: center;
+    margin: auto;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.cuenta p{
+    color: #0D1FEA;
+    font-size: 14px;
+    font-weight: 700;
+}
+.btn-ir{
+    color: #0D1FEA;
+    font-size: 14px;
+    text-decoration: none;
+}
+.btn-ir:hover{
+    color: #030955;
+    font-size: 14px;
+    text-decoration: none;
+    
 }
