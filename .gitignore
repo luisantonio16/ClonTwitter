@@ -7,11 +7,12 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+mdules
 dist
 dist-ssr
 *.local
 .eslintrc.json
-vite.config.js
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -25,5 +26,5 @@ vite.config.js
 .eslintrc.cjs
 public/vite.svg
 src/assets/react.svg
-package-lock.json
+
 
