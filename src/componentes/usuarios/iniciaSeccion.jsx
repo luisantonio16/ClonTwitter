@@ -24,8 +24,8 @@ function iniciarSeccion () {
                 </div>
               </form>
               <div className="cuenta">
-                  <p className="Registrarse-text">Ya tienes una cuenta.?</p>
-                  <NavLink className="btn-ir" to="/registrarse">Inicia Seccion</NavLink>
+                  <p className="Registrarse-text">Aun no tienes una cuenta.?</p>
+                  <NavLink className="btn-ir" to="/registrarse">Registrase</NavLink>
               </div>
           </div>
      </section>
