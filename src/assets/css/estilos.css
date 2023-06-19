@@ -302,7 +302,7 @@ input[type="password"]{
     margin: auto; 
     padding: 20px;
     gap: 10px;
-    width: 40%;
+    width: 50%;
     border: 1px solid rgba(132, 133, 132, 0.452);
     border-radius: 10px;
 }
@@ -316,7 +316,7 @@ input[type="password"]{
    flex-wrap: wrap;
    margin: auto;
    gap: 10px;
-   width: 60%;
+   width: 80%;
 }
 .imagen-usuario{
     width: 100px;
