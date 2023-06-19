@@ -60,19 +60,19 @@ function Nav(){
                         <ul>
                             <li>
                                  <i className="fas fa-home nav-icono"></i>
-                                 <Link to="/hodiee/perfil" className="nav-items">Inicio</Link>    
+                                 <Link to="/hodiee" className="nav-items">Inicio</Link>    
                             </li>
                             <li>
-                                <i className="fas fa-bars nav-icono"></i>
+                                <i className="fas fa-user nav-icono"></i>
                                 <Link to="/hodiee/perfil" className="nav-items">Ver perfil</Link>     
                             </li>
                             <li>
-                                <i className="fas fa-bars nav-icono"></i>
-                                <Link to="/hodiee/perfil" className="nav-items">Ver perfil</Link>    
+                                <i className="fas fa-search nav-icono"></i>
+                                <Link to="/hodiee/perfil" className="nav-items">Buscar</Link>    
                             </li>
                             <li>
-                                <i className="fas fa-bars nav-icono"></i>
-                                <Link to="/hodiee/perfil" className="nav-items">Ver perfil</Link>    
+                                <i className="fas fa-tool nav-icono"></i>
+                                <Link to="/hodiee/perfil" className="nav-items">Cofiguraciones</Link>    
                             </li>
                             
 
