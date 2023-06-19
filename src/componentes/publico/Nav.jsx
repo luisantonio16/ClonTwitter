@@ -9,14 +9,20 @@ function Nav(){
                 <h2>Hodiee</h2>
             </div>
             <div className="nav-buttons">
-                <NavLink className= "nav-items " to="/login">
-                    <i className="fa-solid fa-user"></i>
-                    <span>Iniciar Seccion</span>
-                </NavLink>
-                <NavLink className= "nav-items " to="/registrarse">
-                    <i className="fa-solid fa-users"></i>
-                    <span >Registrarse</span>
-                </NavLink>
+                <ul>
+                    <li>
+                        <NavLink className= "nav-items " to="/login">
+                            <i className="fa-solid fa-user"></i>
+                            <span >Iniciar Seccion</span>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink className= "nav-items " to="/registrarse">
+                            <i className="fa-solid fa-users"></i>
+                            <span >Registrarse</span>
+                        </NavLink>
+                    </li>
+                </ul>
             </div>
          </nav> 
         </>

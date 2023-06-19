@@ -7,12 +7,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
+body{
+    overflow: hidden;
+}
 /*Header de la red social*/
 .header{
-    background-color: #0D1FEA;
+    background-color: #2f3ff1d5;
     width: 100%;
     height: 70px;
+
 }
 
 /*Nav de la red social*/
@@ -20,50 +23,158 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: auto;
-    padding: 10px;
+    position: relative;
     color: #fff;
+    margin: auto;
+    padding: 15px;
 }
 
 .nav-logo{
- display: block;
- margin: 10px 0;
-}
-.nav-logo h2{
-    font-size: 25px;
-    font-weight: 700;
-}
-.nav-buttons{
     display: block;
-    margin: 10px 0;
+    align-items: center;
+  
 }
-.nav-buttons a{
-    color: #fff;
+.logo{
     text-decoration: none;
-    margin: 0 10px;
-    padding: 12px;
-    transition: all .1ms ease;
-    border-radius: 10px;
+    font-size: 30px;
+    color: #fff;
+    font-weight: bold;
 }
-.nav-buttons a:hover{
-   background-color: #040c68;
+.nav-usuario{
+    display: flex;
 }
-.nav-buttons a i{
-    margin: 0 5px;
+.nav-usuario-nombre{
+    font-size: 18px;
+}
+.nav-bar{
+    font-size: 25px;
+}
+.nav-menu{
+    position: absolute;
+    width: 20%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    background-color: #000000ab;
+    right: -500px;
+    top: 90%;
+    color: #fff;
+    overflow: hidden;
+    transition: all 2s ease;
+}
+.show{
+    position: absolute;
+    width: 20%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+    background-color: #000000ab;
+    right: 1px;
+    top: 90%;
+    color: #fff;
+    overflow: hidden;
+    transition: all 2s ease;
+}
+/* .show::before{
+    content: "";
+    background-color: #eceaeac0;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+} */
+.nav-menu-item{
+    width: 100%;
+}
+.nav-menu ul li{
+    list-style: none;
+}
+.nav-logo-usuario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border-bottom: 1px solid rgba(132, 133, 132, 0.452);
+    padding: 5px;
+    width:90%;
+}
+.nav-nombre{
+    font-size: 16px;
+    margin-left: 10px;
+}
+.nav-nombre-Usuario{
+    margin-left: 10px;
+    font-size: 14px;
+}
+.nav-imagen-usuario{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 20px;
+    
+}
+.nav-menu-items{
+    display: block;
+    text-align: center;
+    margin: auto;
 }
 .nav-items{
-    font-size:14px;
-    font-weight: 500;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px ;
+    color: #fff;
+    
+}
+.nav-items i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+.nav-items::before{
+    content: "";
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background-color: #ffff;
+    border-radius: 4px;
+    transform-origin: right;
+    transition: scale 0.25s;
+    scale: 0;
+
+}
+.nav-items:hover::before{
+    scale: 1;
+    transform-origin: left;
+
 }
 
+.nav-footer{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin: auto;
+    border-top: 1px solid rgba(132, 133, 132, 0.452);
+    width:90%;
+    
+}
+.nav-footer ul li{
+    list-style: none;
+}
+.nav-footer-items{
+    margin: auto;
+}
+.nav-usuario-nombre{
+    margin-right:10px ;
+}
 /*contenido-Principal*/
 .contenido-Principal{
-    display: grid;
-    width: 100%;
+    width: 90%;
+    max-width: 1200px;
     padding: 15px;
     margin: 20px auto;
-    grid-template-columns:  auto;
 }
+
 
 /*Registrarse*/
 .Registrarse{
@@ -72,7 +183,6 @@
     align-items: center;
     margin: auto;
     width: 70%;
-    grid-column: 1/1;
 }
 .Registrarse-container{
     width: 40%;
@@ -146,20 +256,33 @@ input[type="password"]{
 .cuenta{
     position: absolute;
     bottom: 0;
-    right:28%;
-    display: block;
+    right:29%;
+    display: inline-block;
     text-align: center;
     margin: auto;
+    text-align: center;
     flex-direction: column;
     margin-bottom: 10px;
 }
-.cuenta p{
+.cuenta-login{
+    position: absolute;
+    bottom: 100px;
+    left:23%;
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.cuenta p, .cuenta-login p{
     color: #0D1FEA;
     font-size: 14px;
     font-weight: 700;
 }
+
 .btn-ir{
-    color: #0D1FEA;
+    color: #0b0f3bde;
     font-size: 14px;
     text-decoration: none;
 }
@@ -168,4 +291,74 @@ input[type="password"]{
     font-size: 14px;
     text-decoration: none;
     
+}
+
+/*Perfil del usuario*/
+.perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto; 
+    padding: 20px;
+    gap: 10px;
+    width: 40%;
+    border: 1px solid rgba(132, 133, 132, 0.452);
+    border-radius: 10px;
+}
+.perfil-usuario{
+    width: 90%;
+}
+.contenedor-perfil{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   margin: auto;
+   gap: 10px;
+   width: 60%;
+}
+.imagen-usuario{
+    width: 100px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.perfil-nombre{
+    color: #000000bb;
+    font-size: 20px;
+    font-weight: 400;
+}
+.perfil-nombre-usuario{
+    color: #525355e8;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.perfil-seguidos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    border-top: 1px solid rgba(132, 133, 132, 0.452);
+    width: 90%;
+    padding: 10px;
+}
+/**/
+
+.perfil-seguido h2, .perfil-seguidores h2, .perfil-publicaciones h2{
+    color: #03030388;
+    font-size: 16px;
+    font-weight: 500;
+     
+}
+.perfil-seguido p, .perfil-seguidores p, .perfil-publicaciones p{
+    color: #0c4b9ec0;
+    font-size: 14px;
+    font-weight: 900;
+
+  
+     
 }

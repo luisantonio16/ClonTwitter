@@ -1,33 +1,99 @@
-import React from "react";
+import React, { useState } from "react";
+import user from "../../assets/imagenes/user.png";
+import { NavLink, useNavigate, Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import { Global } from "../../helper/global";
+
+
 
 function Nav(){
+    const [show, setShow] = useState('nav-menu')
+    const {auth, contador} = useAuth();
+    const navigate = useNavigate();
+
+    const navegar= ()=>{  
+        setTimeout(()=>{
+            navigate("/hodiee/perfil", {replace:true});
+        },1000)
+       
+    }
+
+    const cambiar = ()=>{
+        if(show == "nav-menu"){
+            setShow("show")
+        }else{
+            setShow("nav-menu");
+        }
+        
+    }
+
     return(
-        <>
-         <nav className="nav"> 
+    <>
+        <nav className="nav"> 
             <div className="nav-logo">
-                <h2>Hodiee</h2>
+            <Link to="/hodiee" className="logo" >Hodiee</Link> 
             </div>
-            <div className="nav-buttons">
-                <a href="#">
-                    <i className="fa-solid fa-home"></i>
-                    <span className="nav-items">Inicio</span>
-                </a>
-                <a href="#">
-                    <i className="fa-solid fa-users"></i>
-                    <span className="nav-items">Registrarse</span>
-                </a>
-                <a href="#">
-                    <i className="fa-solid fa-users"></i>
-                    <span className="nav-items">Registrarse</span>
-                </a>
-                <a href="#">
-                    <i className="fa-solid fa-users"></i>
-                    <span className="nav-items">Registrarse</span>
-                </a>
+          
+            <div className="nav-usuario">
+                <div className="nav-usuarios">
+                    <span className="nav-usuario-nombre">{auth.nombre}</span>
+                </div> 
+                <div>
+                   <i className="fas fa-bars nav-bar" onClick={cambiar}></i>
+               </div>           
             </div>
-           
-         </nav> 
-        </>
+
+            <div className={show}>
+                <div className="nav-menu-item">
+                    <div className="nav-logo-usuario">
+                        <article className="picture">
+                            {auth.imagen != "default.png" && <img src={Global.url+"usuarios/avatar/"+auth.imagen}  className="nav-imagen-usuario"/>}
+                            {auth.imagen == "default.png" && <img src={user} className="nav-imagen-usuario" />}
+                        </article>
+                        <article>
+                             <p className="nav-nombre">{auth.nombre}</p>
+                             <p  className="nav-nombre-Usuario">{auth.usuario}</p>
+                        </article>
+                    </div>
+
+                    <div className="nav-menu-items">
+                        <ul>
+                            <li>
+                                 <i className="fas fa-home nav-icono"></i>
+                                 <Link to="/hodiee/perfil" className="nav-items">Inicio</Link>    
+                            </li>
+                            <li>
+                                <i className="fas fa-bars nav-icono"></i>
+                                <Link to="/hodiee/perfil" className="nav-items">Ver perfil</Link>     
+                            </li>
+                            <li>
+                                <i className="fas fa-bars nav-icono"></i>
+                                <Link to="/hodiee/perfil" className="nav-items">Ver perfil</Link>    
+                            </li>
+                            <li>
+                                <i className="fas fa-bars nav-icono"></i>
+                                <Link to="/hodiee/perfil" className="nav-items">Ver perfil</Link>    
+                            </li>
+                            
+
+                        </ul>
+                    </div>
+                    <div className="nav-footer">
+                        <div className="nav-footer-items">
+                            <ul>
+                                <li>
+                                    <i className="fa-solid fa-right-from-bracket"></i>
+                                    <Link to="/hodiee/perfil" className="nav-items">Cerrar Seccion</Link>    
+                                </li>
+                            </ul>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+          
+        </nav> 
+   </>
     );    
 }
 
