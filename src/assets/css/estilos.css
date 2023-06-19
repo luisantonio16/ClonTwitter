@@ -62,7 +62,7 @@ body{
 }
 .show{
     position: absolute;
-    width: 20%;
+    width: 290px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
     background-color: #000000ab;
     right: 1px;
