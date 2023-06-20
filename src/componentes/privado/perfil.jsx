@@ -5,11 +5,7 @@ import { Global } from "../../helper/global";
 
 
 function Perfil(){
-
     const {auth, contador} = useAuth();
-    console.log(auth);
-    console.log(contador);
-
 
     return(
         <section className="perfil">

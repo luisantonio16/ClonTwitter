@@ -3,24 +3,47 @@ import user from "../../assets/imagenes/user.png";
 import { NavLink, useNavigate, Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import { Global } from "../../helper/global";
+import Swal from 'sweetalert2'
 
 
 
 function Nav(){
     const [show, setShow] = useState('nav-menu')
-    const {auth, contador} = useAuth();
+    const {auth, setAuth, setContador} = useAuth();
     const navigate = useNavigate();
 
-    const navegar= ()=>{  
-        setTimeout(()=>{
-            navigate("/hodiee/perfil", {replace:true});
-        },1000)
+    
+
+    const cerraSeccion = ()=>{  
+        Swal.fire({
+                title: 'Estas Seguro?',
+                text: "Deseas cerrar la Seccion",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'si'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                    //vaciamos el local storaje
+                    localStorage.clear();
+    
+                    //vaciamos los estados globales
+                    setAuth({});
+                    setContador({});
+    
+                    //hacemos la reddirecion al login
+                    setTimeout(()=>{
+                        navigate("/login")
+                    },1000)             
+                }
+        })
        
     }
 
     const cambiar = ()=>{
         if(show == "nav-menu"){
-            setShow("show")
+            setShow("nav-menu show")
         }else{
             setShow("nav-menu");
         }
@@ -31,7 +54,7 @@ function Nav(){
     <>
         <nav className="nav"> 
             <div className="nav-logo">
-            <Link to="/hodiee" className="logo" >Hodiee</Link> 
+                 <Link to="/hodiee" className="logo" >Hodiee</Link> 
             </div>
           
             <div className="nav-usuario">
@@ -71,8 +94,8 @@ function Nav(){
                                 <Link to="/hodiee/perfil" className="nav-items">Buscar</Link>    
                             </li>
                             <li>
-                                <i className="fas fa-tool nav-icono"></i>
-                                <Link to="/hodiee/perfil" className="nav-items">Cofiguraciones</Link>    
+                                <i className="fas fa-gear nav-icono"></i>
+                                <Link to="/hodiee/editarPerfil" className="nav-items">Editar Perfil</Link>    
                             </li>
                             
 
@@ -83,7 +106,7 @@ function Nav(){
                             <ul>
                                 <li>
                                     <i className="fa-solid fa-right-from-bracket"></i>
-                                    <Link to="/hodiee/perfil" className="nav-items">Cerrar Seccion</Link>    
+                                    <Link onClick={cerraSeccion} className="nav-items">Cerrar Seccion</Link>    
                                 </li>
                             </ul>
                         </div>

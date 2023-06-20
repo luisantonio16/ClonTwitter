@@ -7,6 +7,11 @@ import PaginaPrivada from "../componentes/privado/paginaprivada";
 import Feed from "../componentes/publicaciones/feed";
 import Perfil from "../componentes/privado/perfil";
 import { AuthProvider } from "../contenidos/AuthProvider";
+import { Error } from "../componentes/layouts/error";
+import { EditarUsuario } from "../componentes/usuarios/editarUsuario";
+
+
+
 
 function Rutas() {
   return (
@@ -23,7 +28,13 @@ function Rutas() {
             <Route index element={<Feed />} />
             <Route path="feed" element={<Feed />} />
             <Route path="perfil" element={<Perfil />} />
+            <Route path="editarPerfil" element={< EditarUsuario/>} />
           </Route>
+
+          <Route path="*" element={<Error />} >
+             <Route index element={<Error />} />
+          </Route>
+
         </Routes>
       </AuthProvider>
     </BrowserRouter>

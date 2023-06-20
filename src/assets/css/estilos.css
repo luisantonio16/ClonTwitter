@@ -7,9 +7,11 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
-    overflow: hidden;
+:root
+{
+    scroll-behavior: smooth;
 }
+
 /*Header de la red social*/
 .header{
     background-color: #2f3ff1d5;
@@ -28,7 +30,18 @@ body{
     margin: auto;
     padding: 15px;
 }
-
+.nav-buttons ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.nav-buttons ul li{
+  list-style: none;
+  color: #fff;
+  margin-left: 10px;
+    
+}
 .nav-logo{
     display: block;
     align-items: center;
@@ -48,28 +61,20 @@ body{
 }
 .nav-bar{
     font-size: 25px;
+    cursor: pointer;
 }
 .nav-menu{
     position: absolute;
     width: 20%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-    background-color: #000000ab;
-    right: -500px;
-    top: 90%;
-    color: #fff;
-    overflow: hidden;
-    transition: all 2s ease;
-}
-.show{
-    position: absolute;
-    width: 290px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-    background-color: #000000ab;
+    background-color: #000000a9;
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     right: 1px;
     top: 90%;
     color: #fff;
-    overflow: hidden;
-    transition: all 2s ease;
+    transition: all 1s ease-in-out;
+}
+.show{
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
 }
 /* .show::before{
     content: "";
@@ -167,12 +172,15 @@ body{
 .nav-usuario-nombre{
     margin-right:10px ;
 }
+
+
 /*contenido-Principal*/
 .contenido-Principal{
     width: 90%;
     max-width: 1200px;
-    padding: 15px;
-    margin: 20px auto;
+    overflow: hidden;
+    margin: auto;
+    padding: 50px 0;
 }
 
 
@@ -358,7 +366,96 @@ input[type="password"]{
     color: #0c4b9ec0;
     font-size: 14px;
     font-weight: 900;
-
   
-     
+}
+
+/*Pagina de error*/
+.Error{
+    width: 80%;
+    max-width: 900px;
+    padding: 40px 0;
+    margin: auto;
+    overflow: hidden;
+}
+
+.error-container{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    width: 60%;
+    height: 200px;
+    border-radius: 10px;
+}
+.error-titulo{
+    text-align: center;
+    color: #070c53d8;
+    font-weight: bold;
+    letter-spacing:.3rem;
+}
+.error-parrafo{
+    text-align: center;
+    font-size: 20px;
+    color: #494b5fbd;
+}
+
+/*Editar*/
+.editar{
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    padding: 30px 0;
+}
+.editar-titulo{
+    color: #0d20ead5;
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.editar-container{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+.form{
+    background:#fff;
+    margin: auto;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 10px;
+}
+.Cotent-text{
+    margin: 10px auto;
+
+}
+.form-items{
+    width: 90%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin:12px  auto;
+    padding: 8px 10px;
+    border: none;
+    border-bottom: 1px solid #0d20ea79;
+    font-size: 14px;
+    outline: none;
+}
+.form-item-btn{
+    display: block;
+    justify-content: center;
+     align-items: center;
+     margin:auto;
+    width: 90%;
+    border: none;
+    border-radius: 20px;
+    background-color: #0D1FEA;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
 }

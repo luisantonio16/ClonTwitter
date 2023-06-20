@@ -4,7 +4,7 @@
 function feed(){
     return(
         <div>
-            gola sy el feed
+            Hola soy el fed
         </div>
     );
 }

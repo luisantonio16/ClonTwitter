@@ -14,11 +14,10 @@ function paginaPublica() {
       <Header />
       {/*Contenido Principal */}
       <div className="contenido-Principal">
-        {!auth ? 
-         <Outlet/>
-
+        {!auth._id ? 
+            <Outlet/>
          :
-         <Navigate to={"/hodiee"} />
+            <Navigate to= "/hodiee" />
         }
          
       </div>

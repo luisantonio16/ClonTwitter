@@ -1,23 +1,23 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 
 function Nav(){
     return(
         <>
          <nav className="nav"> 
             <div className="nav-logo">
-                <h2>Hodiee</h2>
+                <Link to="/" className="logo" >Hodiee</Link> 
             </div>
             <div className="nav-buttons">
                 <ul>
                     <li>
-                        <NavLink className= "nav-items " to="/login">
+                        <NavLink className="nav-items"  to="/login">
                             <i className="fa-solid fa-user"></i>
                             <span >Iniciar Seccion</span>
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink className= "nav-items " to="/registrarse">
+                        <NavLink className="nav-items"  to="/registrarse">
                             <i className="fa-solid fa-users"></i>
                             <span >Registrarse</span>
                         </NavLink>

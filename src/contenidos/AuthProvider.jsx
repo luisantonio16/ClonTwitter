@@ -6,7 +6,7 @@ const authContext = createContext();
 export const AuthProvider = ({children})=>{
 
     const [auth, setAuth] = useState({});
-    const [contador, contadores] = useState({})
+    const [contador, setContador] = useState({})
 
 
 
@@ -51,13 +51,14 @@ export const AuthProvider = ({children})=>{
         const datos = await respuesta.json();
         const datosSeguidores = await seguidores.json();
         setAuth(datos.Usuarios)  
-        contadores(datosSeguidores) 
+        setContador(datosSeguidores) 
     }
 
     return(<authContext.Provider  value={{
         auth,
         setAuth,
-        contador
+        contador,
+        setContador
     }}>
         {children}
     </authContext.Provider>    

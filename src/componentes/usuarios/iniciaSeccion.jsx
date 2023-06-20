@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useForm } from "../../hooks/useforms";
+import  useAuth  from "../../hooks/useAuth";
 import { Global } from "../../helper/global";
 import Swal from 'sweetalert2'
 
@@ -8,6 +9,7 @@ import Swal from 'sweetalert2'
 function iniciarSeccion () {
 
   const {form,changed} = useForm({});
+  const {setAuth} = useAuth();
 
   
   const login = async (e) =>{
@@ -24,25 +26,37 @@ function iniciarSeccion () {
       }
     })
 
+    const alerta =()=>{
+
+    }
+
     const datos = await respuesta.json();
 
     if(datos.status == "Succes"){
       //persitimos los datos en el localstorage
-      localStorage.setItem('token', datos.token);
-      localStorage.setItem('usuario', JSON.stringify(datos.usuario));
+          localStorage.setItem('token', datos.token);
+          localStorage.setItem('usuario', JSON.stringify(datos.usuario));
 
-      //alerta de que notificacion, para indicar que todo salio bien
-      Swal.fire(
-        'Welcome!',
-        datos.usuario.nombre,
-        'success'
-      )
-    }else{
-      Swal.fire(
-        'Precaucion',
-        'Usuario incorrecto',
-        'warning'
-      )
+          //alerta de que notificacion, para indicar que todo salio bien
+          Swal.fire(
+             'Welcome!',
+             datos.usuario.nombre,
+             'success'
+          )
+           //cargamos el usuario al
+            setAuth(datos.usuario);
+
+           //redirecionamos
+           setTimeout(()=>{
+            window.location.reload();
+          }, 1000)
+
+    }else{ 
+        Swal.fire(
+          'Precaucion',
+          'Usuario incorrecto',
+          'warning'
+        )
     }
 
     console.log(datos);
