@@ -68,26 +68,26 @@ function iniciarSeccion () {
     <>
     <section className="Registrarse">
           <div className="Registrarse-container">
-            <div className="Cabeza">
-                <h2 className="Registrarse-title">Hodiee</h2>
-            </div>
-              <form className="Registrarse-form" onSubmit={login}>
-                <h2 className="Registrarse-title">Login</h2>
-                <div className="Registrarse-text">
-                    <input type="text" placeholder="usuario o correo electronico" name="email" onChange={changed}/>
-                </div>
-
-                <div className="Registrarse-text">
-                    <input type="password" placeholder="Contraseña" name="contraseña" onChange={changed}  />
-                </div>
-                <div className="Registrarse-text">
-                    <input type="submit" value="Enviar" />
-                </div>
-              </form>
-              <div className="cuenta-login">
-                  <p className="Registrarse-text">Aun no tienes una cuenta.?</p>
-                  <NavLink className="btn-ir" to="/registrarse">Registraste aqui</NavLink>
+              <div className="Cabeza">
+                  <h2 className="Registrarse-title">Hodiee</h2>
               </div>
+                <form className="Registrarse-form" onSubmit={login}>
+                  <h2 className="Registrarse-title">Login</h2>
+                  <div className="Registrarse-text">
+                      <input type="text" placeholder="usuario o correo electronico" name="email" onChange={changed}/>
+                  </div>
+
+                  <div className="Registrarse-text">
+                      <input type="password" placeholder="Contraseña" name="contraseña" onChange={changed}  />
+                  </div>
+                  <div className="Registrarse-text">
+                      <input type="submit" value="Enviar" />
+                  </div>
+                </form>
+                <div className="cuenta-login">
+                    <p className="Registrarse-text">Aun no tienes una cuenta.?</p>
+                    <NavLink className="btn-ir" to="/registrarse">Registraste aqui</NavLink>
+                </div>
           </div>
      </section>
     </>

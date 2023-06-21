@@ -64,14 +64,19 @@
     cursor: pointer;
 }
 .nav-menu{
-    position: absolute;
-    width: 20%;
+    width: 300px;
+    max-width: 70%;  
     background-color: #000000a9;
+    position: absolute;
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     right: 1px;
     top: 90%;
     color: #fff;
-    transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;  
+}
+.nav-menu-item{
+    width: 90%; 
+    
 }
 .show{
     clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
@@ -86,9 +91,6 @@
     right: 0;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 } */
-.nav-menu-item{
-    width: 100%;
-}
 .nav-menu ul li{
     list-style: none;
 }
@@ -96,6 +98,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     margin: auto;
     border-bottom: 1px solid rgba(132, 133, 132, 0.452);
     padding: 5px;
@@ -122,16 +125,16 @@
     margin: auto;
 }
 .nav-items{
-    font-size: 16px;
+    font-size: 14px;
     position: relative;
     display: inline-block;
     text-decoration: none;
-    margin: 10px ;
+    margin: 8px ;
     color: #fff;
     
 }
 .nav-items i {
-    font-size: 16px;
+    font-size: 14px;
     margin-right: 5px;
 }
 .nav-items::before{
@@ -190,13 +193,13 @@
     justify-content: center;
     align-items: center;
     margin: auto;
-    width: 70%;
+    width: 80%;
 }
 .Registrarse-container{
-    width: 40%;
-    height: 600px;
-   box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
-   position: relative;
+     width: 350px;
+     height: 580px;
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+     position: relative;
 }
 .Cabeza{
     width: 100%;
@@ -263,25 +266,25 @@ input[type="password"]{
 }
 .cuenta{
     position: absolute;
-    bottom: 0;
-    right:29%;
-    display: inline-block;
-    text-align: center;
-    margin: auto;
+    width: 100%;
+    bottom: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     flex-direction: column;
     margin-bottom: 10px;
 }
 .cuenta-login{
     position: absolute;
-    bottom: 100px;
-    left:23%;
-    display: inline-block;
-    text-align: center;
-    margin: auto;
+    width: 100%;
+    bottom: 80px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     flex-direction: column;
-    margin-bottom: 10px;
 }
 .cuenta p, .cuenta-login p{
     color: #0D1FEA;
@@ -428,10 +431,15 @@ input[type="password"]{
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
     padding: 10px;
     border-radius: 10px;
+    width: 50%;
 }
 .Cotent-text{
     margin: 10px auto;
 
+}
+.cotent-imagen{
+    padding: 10px;
+    margin: auto;
 }
 .form-items{
     width: 90%;
@@ -439,10 +447,10 @@ input[type="password"]{
     justify-content: center;
     align-items: center;
     margin:12px  auto;
-    padding: 8px 10px;
+    padding: 10px 15px;
     border: none;
     border-bottom: 1px solid #0d20ea79;
-    font-size: 14px;
+    font-size: 16px;
     outline: none;
 }
 .form-item-btn{
@@ -458,4 +466,6 @@ input[type="password"]{
     font-size: 14px;
     color: #fff;
     font-weight: 700;
+    margin-top: 10px;
 }
+
