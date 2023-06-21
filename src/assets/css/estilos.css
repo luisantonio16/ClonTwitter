@@ -267,7 +267,7 @@ input[type="password"]{
 .cuenta{
     position: absolute;
     width: 100%;
-    bottom: -10px;
+    bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
