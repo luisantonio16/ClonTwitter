@@ -13,7 +13,7 @@ export const AuthProvider = ({children})=>{
     useEffect(()=>{
         authUsuari();
 
-    },[])
+    }, [])
 
     const authUsuari = async() =>{
         //sacar datos del usuario identificado

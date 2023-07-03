@@ -3,6 +3,7 @@ import useAuth from '../../hooks/useAuth'
 import { Global } from '../../helper/global';
 import { serializarforms } from '../../helper/serializarforms';
 import Swal from 'sweetalert2'
+import imagen from '../../assets/imagenes/user.png'
 
 export const EditarUsuario = () => {
     const {auth, setAuth} = useAuth();
@@ -59,11 +60,9 @@ export const EditarUsuario = () => {
             console.log(dataArchivo);
 
         }
-
-
-       
-
     }
+
+    
   return (
     <section className='editar'>
         <div className='editar-container'>

@@ -9,6 +9,11 @@ import Perfil from "../componentes/privado/perfil";
 import { AuthProvider } from "../contenidos/AuthProvider";
 import { Error } from "../componentes/layouts/error";
 import { EditarUsuario } from "../componentes/usuarios/editarUsuario";
+import { Usuarios } from "../componentes/usuarios/usuarios";
+import { Seguidos } from "../componentes/follows/seguidos";
+import { Seguidores } from "../componentes/follows/Seguidores";
+import { PerfilUsuarios } from "../componentes/usuarios/perfilUsuarios";
+import { Publicaciones } from "../componentes/publicaciones/publicaciones";
 
 
 
@@ -29,6 +34,12 @@ function Rutas() {
             <Route path="feed" element={<Feed />} />
             <Route path="perfil" element={<Perfil />} />
             <Route path="editarPerfil" element={< EditarUsuario/>} />
+            <Route path="buscar" element={<Usuarios />} />
+            <Route path="siguiendo/:id" element={<Seguidos />} />
+            <Route path="seguidores/:id" element={<Seguidores />} />
+            <Route path="perfilUsuarios/:id" element={<PerfilUsuarios />} />
+            <Route path="publicaciones/:id" element={<Publicaciones />} />
+          
           </Route>
 
           <Route path="*" element={<Error />} >

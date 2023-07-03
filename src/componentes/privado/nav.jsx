@@ -91,7 +91,7 @@ function Nav(){
                             </li>
                             <li>
                                 <i className="fas fa-search nav-icono"></i>
-                                <Link to="/hodiee/perfil" className="nav-items">Buscar</Link>    
+                                <Link to="/hodiee/buscar" className="nav-items">Buscar</Link>    
                             </li>
                             <li>
                                 <i className="fas fa-gear nav-icono"></i>

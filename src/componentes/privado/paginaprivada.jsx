@@ -13,7 +13,7 @@ function paginaprivada() {
       <Header />
       {/*Contenido Principal */}
       <section className="contenido-Principal">
-        {auth._id ?
+        {auth ?
            <Outlet/>
          :
            <Navigate to="/login"/>
