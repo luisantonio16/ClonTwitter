@@ -786,18 +786,16 @@ font-weight: 500;
     max-width: 90px;
     margin: auto;
     display: block;
-    
-
 }
 .publicacion-imagen-usuario{
-    display: block;
+     display: block;
      object-fit: cover;
      width: 100%;
 }
 .publicaciones-usuarios-info{
-    max-width: 290px;
+     max-width: 290px;
      margin:auto ;
-    text-align: center;
+     text-align: center;
 }
 
 .publicaciones-titulo-usuario{
@@ -805,10 +803,8 @@ font-weight: 500;
     font-size: 16px;
 }
 .publicaciones-bio{
-     width: 100%;
-     border-top:1px solid rgba(132, 133, 132, 0.24); 
-
-
+    width: 100%;
+    border-top:1px solid rgba(132, 133, 132, 0.24); 
 }
 .publicacion-bio{
     color: #0f0f0fb7;
@@ -834,9 +830,9 @@ font-weight: 500;
     align-items: center;
     justify-content: center;
     margin: 10px auto;
-     width: 25px;
-     cursor: pointer;
-     transition: all 1ms ease-out;
+    width: 25px;
+    cursor: pointer;
+    transition: all 1ms ease-out;
    
 }
 .pub-eliminar img:hover{
@@ -853,5 +849,4 @@ font-weight: 500;
 .imagen-publicacion{
     width: 100%;
     object-fit: cover;
-
 }
