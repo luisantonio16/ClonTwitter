@@ -3,17 +3,22 @@ import { Global } from '../../helper/global';
 import trash from '../../assets/imagenes/trash50px.png'
 import imagen from '../../assets/imagenes/user.png'
 import { Link, useParams } from 'react-router-dom';
+import useAuth from "../../hooks/useAuth";
+import Swal from 'sweetalert2'
 
 export const Publicaciones = () => {
 
     const params = useParams();
     const token = localStorage.getItem('token');
+    const {auth} = useAuth();
     const [publicacion, setPublicacion] = useState([]);
     const [pub, setPub] = useState([]);
     const [page, setpage] = useState(1)
+  
 
     useEffect(() => {
         obtenerPublicacion(1, true);
+
     }, [])
 
 
@@ -22,7 +27,7 @@ export const Publicaciones = () => {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: localStorage.getItem('token')
+                Authorization: token
             }
         })
 
@@ -43,7 +48,7 @@ export const Publicaciones = () => {
     }
 
     const siguiente = () => {
-        if (pub.totalPaginas === page) {
+        if (pub.publicaciones.totalPages == page) {
             Swal.fire(
                 'Informacion',
                 'No hay mas Usuarios',
@@ -57,20 +62,28 @@ export const Publicaciones = () => {
         obtenerPublicacion(next);
     }
 
-    const eliminarPub = async (pubId) => {
-        const respuesta = await fetch(Global.url + "publicacion/eliminar/" + pubId, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: token
-            }
-        });
+    const eliminarPub = async (pubId, iduser) => {
+       
+        if(auth._id != iduser){
+            return false;
 
-        const pubEliminar = await respuesta.json();
-
-        console.log(pubEliminar);
-        setpage(1)
-        obtenerPublicacion(1, true)
+        }else{
+            const respuesta = await fetch(Global.url + "publicacion/eliminar/" + pubId, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                     Authorization: token
+                }
+            });
+    
+            const pubEliminar = await respuesta.json();
+       
+            console.log(pubEliminar);
+            setpage(1)
+            obtenerPublicacion(1, true)
+            console.log("se elimino");
+        }
+       
     }
 
     
@@ -80,7 +93,7 @@ export const Publicaciones = () => {
     return (
         <>
             <article className='perfil-usuarios-publicaciones'>
-                <h2 className='publicaciones-titulo'>Publicaciones</h2>
+                <h2 className='publicaciones-titulo'>Publicacionees</h2>
                 {publicacion.map(pub => {
 
                     return (
@@ -100,7 +113,7 @@ export const Publicaciones = () => {
                                         </div>
                                     </div>
                                     <div className='pub-eliminar'>
-                                        <img src={trash} onClick={() => eliminarPub(pub._id)} />
+                                        <img src={trash} onClick={() => eliminarPub(pub._id, pub.usuario._id)} />
                                     </div>
 
                                 </div>

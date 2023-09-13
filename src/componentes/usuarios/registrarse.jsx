@@ -1,7 +1,9 @@
 import React from "react";
-import { NavLink, json } from "react-router-dom";
+import { NavLink, json, useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useforms";
 import { Global } from "../../helper/global";
+import Swal from 'sweetalert2'
+const navigate = useNavigate();
 
 function registrarse() {
 
@@ -21,8 +23,17 @@ function registrarse() {
     });
 
     const datos = await respuesta.json();
-    console.log(datos);
+    Swal.fire(
+      'Welcome!',
+      'Correct',
+      'success'
+   )
 
+   setTimeout(()=>{
+    navigate("/login")  
+}, 1000)
+   
+   
   }
 
   return (

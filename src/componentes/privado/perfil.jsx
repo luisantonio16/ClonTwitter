@@ -11,8 +11,9 @@ function Perfil() {
     const token = localStorage.getItem('token')
     const { auth, contador } = useAuth();
     const {form, changed} = useForm();
-    const [image, setImage] = useState()
 
+   
+   
     const guardarPublicacion = async(e)=>{
         e.preventDefault();
        

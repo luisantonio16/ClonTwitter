@@ -3,18 +3,25 @@ import { Global } from '../../helper/global';
 import trash from '../../assets/imagenes/trash50px.png'
 import imagen from '../../assets/imagenes/user.png'
 import { Link, useParams } from 'react-router-dom';
+import useAuth from "../../hooks/useAuth";
+import Swal from 'sweetalert2'
+
 
 
 function feed() {
 
+    const {auth} = useAuth();
 
     const token = localStorage.getItem('token');
+
     const [publicacion, setPublicacion] = useState([]);
     const [pub, setPub] = useState([]);
     const [page, setpage] = useState(1)
 
     useEffect(() => {
         obtenerPublicacion(1, true);
+        console.log(pub);
+        
     }, [])
 
 
@@ -39,13 +46,15 @@ function feed() {
             if (newPerfil) {
                 nuevaPub = dataPub.publicaciones.docs;
             }
-            setPublicacion(nuevaPub)
+            setPublicacion(nuevaPub);
+            console.log(nuevaPub);
+           
 
         }
     }
 
     const siguiente = () => {
-        if (pub.totalPaginas === page) {
+        if (pub.publicaciones.totalPages == page) {
             Swal.fire(
                 'Informacion',
                 'No hay mas Usuarios',
@@ -60,6 +69,9 @@ function feed() {
     }
 
     const eliminarPub = async (pubId) => {
+        if(auth._id != publicacion.usuario._id){
+            return false;
+        }
         const respuesta = await fetch(Global.url + "publicacion/eliminar/" + pubId, {
             method: "DELETE",
             headers: {

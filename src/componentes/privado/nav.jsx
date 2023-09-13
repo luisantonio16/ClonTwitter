@@ -33,9 +33,11 @@ function Nav(){
                     setContador({});
     
                     //hacemos la reddirecion al login
+                       
                     setTimeout(()=>{
-                        navigate("/login")
-                    },1000)             
+                        navigate("/login")  
+                    }, 1000)
+                          
                 }
         })
        
@@ -49,6 +51,8 @@ function Nav(){
         }
         
     }
+
+  
 
     return(
     <>
@@ -83,19 +87,19 @@ function Nav(){
                         <ul>
                             <li>
                                  <i className="fas fa-home nav-icono"></i>
-                                 <Link to="/hodiee" className="nav-items">Inicio</Link>    
+                                 <Link to="/hodiee" onClick={cambiar} className="nav-items">Inicio</Link>    
                             </li>
                             <li>
                                 <i className="fas fa-user nav-icono"></i>
-                                <Link to="/hodiee/perfil" className="nav-items">Ver perfil</Link>     
+                                <Link to="/hodiee/perfil" onClick={cambiar} className="nav-items">Ver perfil</Link>     
                             </li>
                             <li>
                                 <i className="fas fa-search nav-icono"></i>
-                                <Link to="/hodiee/buscar" className="nav-items">Buscar</Link>    
+                                <Link to="/hodiee/buscar" onClick={cambiar} className="nav-items">Buscar</Link>    
                             </li>
                             <li>
                                 <i className="fas fa-gear nav-icono"></i>
-                                <Link to="/hodiee/editarPerfil" className="nav-items">Editar Perfil</Link>    
+                                <Link to="/hodiee/editarPerfil" onClick={cambiar} className="nav-items">Editar Perfil</Link>    
                             </li>
                             
 

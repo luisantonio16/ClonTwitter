@@ -21,16 +21,15 @@ export const PerfilUsuarios = () => {
     const [pub, setPub] = useState([])
     const [page, setpage] = useState(1)
     const [follow, isFollow] = useState(false)
-    const [eliminar, setEliminar] = useState(false)
 
 
     useEffect(() => {
         perfil();
         obtenerContadores();
-        obtenerPublicacion(1,true);
-        console.log(publicacion);
+        obtenerPublicacion(1, true)
 
     }, [])
+
 
 
 
@@ -100,7 +99,7 @@ export const PerfilUsuarios = () => {
 
     }
 
-    const obtenerPublicacion = async (page, newPerfil=false) => {
+    const obtenerPublicacion = async (page, newPerfil = false) => {
         const respuesta = await fetch(Global.url + "publicacion/usuario/" + params.id + "/" + page, {
             method: "GET",
             headers: {
@@ -117,7 +116,7 @@ export const PerfilUsuarios = () => {
             if (!newPerfil && publicacion.length >= 1) {
                 nuevaPub = [...publicacion, ...dataPub.publicaciones.docs]
             }
-            if(newPerfil){
+            if (newPerfil) {
                 nuevaPub = dataPub.publicaciones.docs;
             }
             setPublicacion(nuevaPub)
@@ -142,6 +141,11 @@ export const PerfilUsuarios = () => {
     }
 
     const eliminarPub = async (pubId) => {
+
+        if (auth._id != publicacion.usuario._id) {
+             return false;
+        }
+
         const respuesta = await fetch(Global.url + "publicacion/eliminar/" + pubId, {
             method: "DELETE",
             headers: {
@@ -151,13 +155,10 @@ export const PerfilUsuarios = () => {
         });
 
         const pubEliminar = await respuesta.json();
-      
-            console.log(pubEliminar);
-            setpage(1)
-            obtenerPublicacion(1, true)
 
- 
-
+        console.log(pubEliminar);
+        setpage(1)
+        obtenerPublicacion(1, true)
     }
 
     return (
@@ -207,7 +208,7 @@ export const PerfilUsuarios = () => {
 
                         </div>
                         <div className="perfil-publicaciones">
-                            <Link className="link-perfil" to={"/hodiee/publicaciones/"+usuario._id}>
+                            <Link className="link-perfil" to={"/hodiee/publicaciones/" + usuario._id}>
                                 <h2>Publicaciones</h2>
                                 <p>{contador.publicaciones}</p>
                             </Link>
@@ -223,33 +224,33 @@ export const PerfilUsuarios = () => {
 
                         return (
                             <>
-                          
-                          <div className='publicaciones' key={pub._id}>
-                                <div  className="publicaciones-container">
-                                    <div className='publicaciones-imagen-usuario'>
-                                        {pub.usuario.imagen != "default.png" && <img src={Global.url + "usuarios/avatar/" + pub.usuario.imagen} className='publicacion-imagen-usuario' />}
-                    
-                                        {pub.usuario.imagen == "default.png" && <img src={imagen} className="publicacion-imagen-usuario" />}
-                                    </div>
-                                    <div className='publicaciones-usuarios-info'>
-                                        <div>
-                                            <h1 className='publicaciones-titulo-usuario'>{pub.usuario.nombre} <span className='separador'>|<span className='pub-fecha'>{pub.fechaCreado}</span></span></h1>
+
+                                <div className='publicaciones' key={pub._id}>
+                                    <div className="publicaciones-container">
+                                        <div className='publicaciones-imagen-usuario'>
+                                            {pub.usuario.imagen != "default.png" && <img src={Global.url + "usuarios/avatar/" + pub.usuario.imagen} className='publicacion-imagen-usuario' />}
+
+                                            {pub.usuario.imagen == "default.png" && <img src={imagen} className="publicacion-imagen-usuario" />}
                                         </div>
-                                        <div className="publicaciones-bio">
-                                            <h1 className='publicacion-bio'>{pub.texto}</h1>
+                                        <div className='publicaciones-usuarios-info'>
+                                            <div>
+                                                <h1 className='publicaciones-titulo-usuario'>{pub.usuario.nombre} <span className='separador'>|<span className='pub-fecha'>{pub.fechaCreado}</span></span></h1>
+                                            </div>
+                                            <div className="publicaciones-bio">
+                                                <h1 className='publicacion-bio'>{pub.texto}</h1>
+                                            </div>
                                         </div>
+                                        <div className='pub-eliminar'>
+                                            <img src={trash} onClick={() => eliminarPub(pub._id)} />
+                                        </div>
+
                                     </div>
-                                    <div className='pub-eliminar'>
-                                        <img src={trash} onClick={() => eliminarPub(pub._id)} />
-                                    </div>
+                                    <article className='publicacion-imagen'>
+                                        {pub.archivo && <img src={Global.url + "publicacion/media/" + pub.archivo} className='imagen-publicacion' />}
+
+                                    </article>
 
                                 </div>
-                                <article className='publicacion-imagen'>
-                                    {pub.archivo && <img src={Global.url + "publicacion/media/" + pub.archivo} className='imagen-publicacion' />}
-                                
-                                </article>
-
-                            </div>
                             </>
                         )
                     })

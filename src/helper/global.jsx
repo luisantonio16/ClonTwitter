@@ -1,3 +1,3 @@
 export const Global={
-    url:"https://hodie-l4md.onrender.com/api/"
+    url:"http://localhost:3900/api/"
 }

@@ -11,11 +11,17 @@ export const AuthProvider = ({children})=>{
 
 
     useEffect(()=>{
-        authUsuari();
+        authUsuario();
+        authSeguidores();
+    },[])
 
-    }, [])
 
-    const authUsuari = async() =>{
+    useEffect(()=>{
+        authSeguidores();
+    },[contador])
+
+   
+    const authUsuario = async() =>{
         //sacar datos del usuario identificado
         const token = localStorage.getItem('token')
         const usuario = localStorage.getItem('usuario')
@@ -39,8 +45,24 @@ export const AuthProvider = ({children})=>{
             }
         });
 
-        //hacemos otra peticion ajax para sacar los seguidores
-        const seguidores = await fetch(Global.url+"usuarios/contar/"+idUsuario,{
+    
+
+        const datos = await respuesta.json();
+        setAuth(datos.Usuarios)  
+       
+    }
+
+    const authSeguidores = async ()=>{
+         //sacar datos del usuario identificado
+         const token = localStorage.getItem('token');
+         const usuario = localStorage.getItem('usuario')
+
+          //transformamos los datos a un objeto JS
+        const objetoUsuario = JSON.parse(usuario);
+        const idUsuario = objetoUsuario._id;
+         
+          //hacemos otra peticion ajax para sacar los seguidores
+          const seguidores = await fetch(Global.url+"usuarios/contar/"+idUsuario,{
             method: 'GET',
             headers:{
                 'Content-Type':'application/json',
@@ -48,9 +70,7 @@ export const AuthProvider = ({children})=>{
             }
         });
 
-        const datos = await respuesta.json();
         const datosSeguidores = await seguidores.json();
-        setAuth(datos.Usuarios)  
         setContador(datosSeguidores) 
     }
 
