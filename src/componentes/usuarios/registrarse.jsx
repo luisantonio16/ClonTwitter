@@ -3,11 +3,12 @@ import { NavLink, json, useNavigate } from "react-router-dom";
 import { useForm } from "../../hooks/useforms";
 import { Global } from "../../helper/global";
 import Swal from 'sweetalert2'
-const navigate = useNavigate();
+
 
 function registrarse() {
 
   const { form, changed } = useForm({});
+  const navigate = useNavigate();
 
 
   const guardarUsuario = async (e) => {
@@ -31,7 +32,9 @@ function registrarse() {
 
    setTimeout(()=>{
     navigate("/login")  
-}, 1000)
+     }, 1000)
+
+  
    
    
   }
