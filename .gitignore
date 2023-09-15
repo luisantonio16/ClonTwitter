@@ -25,7 +25,6 @@ dist-ssr
 *.sw?
 /node_modules
 .eslintrc.cjs
-public/vite.svg
 src/assets/react.svg
 
 
