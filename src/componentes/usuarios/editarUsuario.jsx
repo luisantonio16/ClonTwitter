@@ -7,7 +7,7 @@ import imagen from '../../assets/imagenes/user.png'
 
 export const EditarUsuario = () => {
     const {auth, setAuth} = useAuth();
-    console.log(auth);
+
 
      const token = localStorage.getItem('token')
 
