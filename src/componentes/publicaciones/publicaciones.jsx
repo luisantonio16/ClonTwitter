@@ -97,8 +97,7 @@ export const Publicaciones = () => {
                 {publicacion.map(pub => {
 
                     return (
-                        <>
-
+                    
                             <div className='publicaciones' key={pub._id}>
                                 <div  className="publicaciones-container">
                                     <div className='publicaciones-imagen-usuario'>
@@ -123,7 +122,7 @@ export const Publicaciones = () => {
 
                             </div>
 
-                        </>
+                        
                     )
                 })
 

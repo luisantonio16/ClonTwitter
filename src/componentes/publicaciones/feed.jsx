@@ -30,7 +30,7 @@ function feed() {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: localStorage.getItem('token')
+                Authorization: token
             }
         })
 
@@ -95,9 +95,9 @@ function feed() {
                     {publicacion.map(pub => {
 
                         return (
-                            <>
+                          
 
-                                <div className='publicaciones' key={pub._id}>
+                                <div className='publicaciones' key ={pub._id}>
                                     <div className="publicaciones-container">
                                         <div className='publicaciones-imagen-usuario'>
                                             {pub.usuario.imagen != "default.png" && <img src={Global.url + "usuarios/avatar/" + pub.usuario.imagen} className='publicacion-imagen-usuario' />}
@@ -123,7 +123,7 @@ function feed() {
 
                                 </div>
 
-                            </>
+                         
                         )
                     })
 

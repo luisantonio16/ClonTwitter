@@ -58,7 +58,7 @@ function Nav(){
     <>
         <nav className="nav"> 
             <div className="nav-logo">
-                 <Link to="/hodiee" className="logo" >Hodiee</Link> 
+                 <Link to="/hodiee" className ="logo" >Hodiee</Link> 
             </div>
           
             <div className="nav-usuario">
