@@ -455,7 +455,7 @@
     justify-content: center;
     text-align: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
     border-top: 1px solid rgba(132, 133, 132, 0.452);
     width: 90%;
     padding: 10px;
@@ -940,13 +940,23 @@
 
 .contenedor-perfil {
     width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
 .imagen-usuario {
-    width: 150px;
+    width: 200px;
 }
 
+.perfil-datos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin-left: 10px;
+}
 .perfil-nombre {
     color: rgba(0, 0, 0, 0.747);
     font-size: 22px;
@@ -960,7 +970,8 @@
 }
 
 .perfil-seguidos {
-    width: 90%;
+    width: 100%;
+    gap: 5px;
 }
 
 
