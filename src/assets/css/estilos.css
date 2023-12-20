@@ -75,8 +75,8 @@
 }
 
 .nav-menu {
-    width: 300px;
-    max-width: 70%;
+    width: 350px;
+    max-width: 75%;
     background-color: #000000a9;
     position: absolute;
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
@@ -84,10 +84,12 @@
     top: 90%;
     color: #fff;
     transition: all 1s ease-in-out;
+    z-index: 20;
 }
 
 .nav-menu-item {
     width: 90%;
+
 
 }
 
@@ -916,6 +918,7 @@
 @media screen and (max-width: 630px) {
     .publicaciones-container {
         flex-direction: column;
+        width: 100%;
     }
 
     .publicaciones-titulo-usuario {

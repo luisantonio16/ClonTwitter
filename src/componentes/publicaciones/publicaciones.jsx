@@ -86,10 +86,6 @@ export const Publicaciones = () => {
        
     }
 
-    
-
-
-
     return (
         <>
             <article className='perfil-usuarios-publicaciones'>

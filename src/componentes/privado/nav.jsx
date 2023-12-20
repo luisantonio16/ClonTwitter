@@ -105,6 +105,7 @@ function Nav(){
 
                         </ul>
                     </div>
+                    
                     <div className="nav-footer">
                         <div className="nav-footer-items">
                             <ul>

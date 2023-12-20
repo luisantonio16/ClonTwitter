@@ -168,7 +168,7 @@ export const PerfilUsuarios = () => {
                     <article className="perfil-usuario">
                         <div className="contenedor-perfil-usuarios">
                             <div className="perfil-imagen">
-                                {usuario.imagen != "default.png" && <img src={Global.url + "usuarios/avatar/" + usuario.imagen} className="nav-imagen-usuario" />}
+                                {usuario.imagen != "default.png" && <img src={Global.url+"usuarios/avatar/" +usuario.imagen} className="nav-imagen-usuario" />}
                                 {usuario.imagen == "default.png" && <img src={imagen} className="nav-imagen-usuario" />}
 
                             </div>
