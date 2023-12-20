@@ -43,28 +43,33 @@ function registrarse() {
     <>
       <section className="Registrarse">
         <div className="Registrarse-container">
-          <div className="Cabeza">
-            <h2 className="Registrarse-title">Hodiee</h2>
-          </div>
+        
+        <h2 className="Registrarse-title">Hod<span>iee</span></h2>
+        
           <form className="Registrarse-form" onSubmit={guardarUsuario}>
-            <h2 className="Registrarse-title">Registrarse</h2>
+            <h2 className="form-title">Registrarse</h2>
             <div className="Registrarse-text">
-              <input type="text" placeholder="Nombre" name="nombre" onChange={changed} />
+              <input type="text" placeholder="Nombre" name="nombre" onChange={changed} className="form-input"/>
+              <label htmlFor="name" className="form-label">Nombre</label>
             </div>
             <div className="Registrarse-text">
-              <input type="text" placeholder="Apellido" name="apellido" onChange={changed} />
+              <input type="text" placeholder="Apellido" name="apellido" onChange={changed} className="form-input" />
+              <label htmlFor="name" className="form-label">Apellido</label>
             </div>
             <div className="Registrarse-text">
-              <input type="text" placeholder="Usuario" name="usuario" onChange={changed} />
+              <input type="text" placeholder="Usuario" name="usuario" onChange={changed} className="form-input"/>
+              <label htmlFor="name" className="form-label">Usuario</label>
             </div>
             <div className="Registrarse-text">
-              <input type="text" placeholder="Email" name="email" onChange={changed} />
+              <input type="text" placeholder="Email" name="email" onChange={changed}className="form-input"  />
+              <label htmlFor="name" className="form-label">Email</label>
             </div>
             <div className="Registrarse-text">
-              <input type="password" placeholder="Contraseña" name="contraseña" onChange={changed} />
+              <input type="password" placeholder="Contraseña" name="contraseña" onChange={changed} className="form-input"/>
+              <label htmlFor="name" className="form-label">Contraseña</label>
             </div>
             <div className="Registrarse-text">
-              <input type="submit" value="Enviar" />
+              <input type="submit" value="Enviar" className="form-btn" />
             </div>
           </form>
           <div className="cuenta">

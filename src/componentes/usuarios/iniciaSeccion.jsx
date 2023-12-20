@@ -15,9 +15,14 @@ function iniciarSeccion() {
 
   const login = async (e) => {
     e.preventDefault();
-    setUsuario(true);
+   
 
     let usuario = form;
+    let campos = document.querySelectorAll('.form-input');
+    
+    setUsuario(true);
+ 
+   
 
     //hacemos la peticion al backend
     const respuesta = await fetch(Global.url + "usuarios/login", {
@@ -73,28 +78,43 @@ function iniciarSeccion() {
   return (
     <>
       <section className="Registrarse">
-        <div className="Registrarse-container">
-          <div className="Cabeza">
-            <h2 className="Registrarse-title">Hodiee</h2>
-          </div>
-          <form className="Registrarse-form" onSubmit={login}>
-            <h2 className="Registrarse-title">Login</h2>
-            <div className="Registrarse-text">
-              <input type="text" placeholder="usuario o correo electronico" name="email" onChange={changed} />
-            </div>
 
-            <div className="Registrarse-text">
-              <input type="password" placeholder="Contraseña" name="contraseña" onChange={changed} />
+        {usuario ?
+          <>
+            <div className="loading show">
+              <div className="spin"></div>
+              <h2 className="SpinTitle">Cargado...</h2>
             </div>
-            <div className="Registrarse-text">
-                <input type="submit" value= {usuario ? 'Cargando...' : 'Iniciar Sesión'} /> 
+          </> :
+          <div className="Registrarse-container">
+
+              <h2 className="Registrarse-title">Hod<span>iee</span></h2>
+
+            <form className="Registrarse-form" onSubmit={login}>
+              <h2 className="form-title">Login</h2>
+              <div className="Registrarse-text">
+                <input type="text" placeholder="usuario o correo electronico" name="email" onChange={changed} className="form-input"/>
+                <label htmlFor="name" className="form-label">usuario o correo electronico</label>
+              </div>
+
+              <div className="Registrarse-text">
+                <input type="password" placeholder="Contraseña" name="contraseña" onChange={changed} className="form-input" />
+                <label htmlFor="name" className="form-label">Contraseña</label>
+              </div>
+
+              <div className="Registrarse-text">
+                <input type="submit" value='Iniciar Sesión' className="form-btn" />
+              </div>
+            </form>
+            <div className="cuenta-login">
+              <p className="Registrarse-text">Aun no tienes una cuenta.?</p>
+              <NavLink className="btn-ir" to="/registrarse">Registraste aqui</NavLink>
             </div>
-          </form>
-          <div className="cuenta-login">
-            <p className="Registrarse-text">Aun no tienes una cuenta.?</p>
-            <NavLink className="btn-ir" to="/registrarse">Registraste aqui</NavLink>
           </div>
-        </div>
+
+
+        }
+
       </section>
     </>
   );
