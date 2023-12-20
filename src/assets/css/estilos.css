@@ -77,7 +77,7 @@
 .nav-menu {
     width: 350px;
     max-width: 75%;
-    background-color: #000000a9;
+    background-color: rgba(0, 0, 0, 0.589);
     position: absolute;
     clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
     right: 1px;
@@ -89,8 +89,6 @@
 
 .nav-menu-item {
     width: 90%;
-
-
 }
 
 .show {
@@ -916,6 +914,56 @@
 }
 
 @media screen and (max-width: 630px) {
+    
+/*publicaion perfil*/
+.publicacion {
+    width: 90%;
+    
+}
+
+.form-publicacion {
+    width: 100%;
+}
+
+
+/*Perfil del usuario*/
+.perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.perfil-usuario {
+    width: 100%;
+}
+
+.contenedor-perfil {
+    width: 90%;
+    text-align: center;
+}
+
+.imagen-usuario {
+    width: 150px;
+}
+
+.perfil-nombre {
+    color: rgba(0, 0, 0, 0.747);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.perfil-nombre-usuario {
+    color: #525355e7;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.perfil-seguidos {
+    width: 90%;
+}
+
+
     .publicaciones-container {
         flex-direction: column;
         width: 100%;
