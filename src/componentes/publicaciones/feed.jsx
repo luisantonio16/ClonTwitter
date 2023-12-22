@@ -98,7 +98,7 @@ function feed() {
                                 <div className='publicaciones' key ={pub._id}>
                                     <div className="publicaciones-container">
                                         <div className='publicaciones-imagen-usuario'>
-                                            {pub.usuario.imagen != "default.png" && <img src={Global.url + "usuarios/avatar/" + pub.usuario.imagen} className='publicacion-imagen-usuario' />}
+                                            {pub.usuario.imagen != "default.png" && <img src={pub.usuario.imagen} className='publicacion-imagen-usuario' />}
                                             {pub.usuario.imagen == "default.png" && <img src={imagen} className="publicacion-imagen-usuario" />}
                                             
                                         </div>
@@ -116,7 +116,7 @@ function feed() {
 
                                     </div>
                                     <article className='publicacion-imagen'>
-                                        {pub.archivo && <img src={Global.url + "publicacion/media/" + pub.archivo} className='imagen-publicacion' />}
+                                        {pub.archivo && <img src={pub.archivo} className='imagen-publicacion' />}
                                     </article>
 
                                 </div>                       

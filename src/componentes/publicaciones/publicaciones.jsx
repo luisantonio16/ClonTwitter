@@ -97,7 +97,7 @@ export const Publicaciones = () => {
                             <div className='publicaciones' key={pub._id}>
                                 <div  className="publicaciones-container">
                                     <div className='publicaciones-imagen-usuario'>
-                                        <img src={Global.url + "usuarios/avatar/" + pub.usuario.imagen} className="publicacion-imagen-usuario" />
+                                        <img src={pub.usuario.imagen} className="publicacion-imagen-usuario" />
                                     </div>
                                     <div className='publicaciones-usuarios-info'>
                                         <div>
@@ -113,7 +113,7 @@ export const Publicaciones = () => {
 
                                 </div>
                                 <article className='publicacion-imagen'>
-                                    {pub.archivo && <img src={Global.url + "publicacion/media/" + pub.archivo} className='imagen-publicacion' />}
+                                    {pub.archivo && <img src={pub.archivo} className='imagen-publicacion' />}
                                 </article>
 
                             </div>

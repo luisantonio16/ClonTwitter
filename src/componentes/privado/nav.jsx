@@ -74,7 +74,7 @@ function Nav(){
                 <div className="nav-menu-item">
                     <div className="nav-logo-usuario">
                         <article className="picture">
-                            {auth.imagen != "default.png" && <img src={Global.url+"usuarios/avatar/"+auth.imagen}  className="nav-imagen-usuario"/>}
+                            {auth.imagen != "default.png" && <img src={auth.imagen}  className="nav-imagen-usuario"/>}
                             {auth.imagen == "default.png" && <img src={user} className="nav-imagen-usuario" />}
                         </article>
                         <article>

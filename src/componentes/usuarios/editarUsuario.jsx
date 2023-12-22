@@ -93,7 +93,7 @@ export const EditarUsuario = () => {
                 <div className="Cotent-text cotent-imagen">
                     <label htmlFor="imagen">imagen de perfil</label>
                     <div className="avatar">
-                        {auth.imagen != "default.png" && <img src={Global.url+"usuarios/avatar/"+auth.imagen} className="nav-imagen-usuario"/>}
+                        {auth.imagen != "default.png" && <img src={auth.imagen} className="nav-imagen-usuario"/>}
                         {auth.imagen == "default.png" && <img src={imagen} className="nav-imagen-usuario"/>}
                     </div>
                     <input type="file" name='file0' id="file"/>

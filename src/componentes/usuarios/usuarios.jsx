@@ -122,7 +122,7 @@ export const Usuarios = () => {
                             <article className='usuario-container--informacion' key={usuarios._id} >
                                 <div className='usuarios-imagen'>
                                     <div className='usuario-imagen'>
-                                        {usuarios.imagen != "default.png" && <img src={Global.url + "usuarios/avatar/" + usuarios.imagen} className="nav-imagen-usuario" />}
+                                        {usuarios.imagen != "default.png" && <img src={usuarios.imagen} className="nav-imagen-usuario" />}
                                         {usuarios.imagen == "default.png" && <img src={avatar} className="nav-imagen-usuario" />}
                                     </div>
                                 </div>
