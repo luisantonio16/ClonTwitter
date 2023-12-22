@@ -95,8 +95,6 @@ function feed() {
                     {publicacion.map(pub => {
 
                         return (
-                          
-
                                 <div className='publicaciones' key ={pub._id}>
                                     <div className="publicaciones-container">
                                         <div className='publicaciones-imagen-usuario'>
@@ -121,9 +119,7 @@ function feed() {
                                         {pub.archivo && <img src={Global.url + "publicacion/media/" + pub.archivo} className='imagen-publicacion' />}
                                     </article>
 
-                                </div>
-
-                         
+                                </div>                       
                         )
                     })
 

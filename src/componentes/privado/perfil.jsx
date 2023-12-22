@@ -40,7 +40,6 @@ function Perfil() {
 
         if(data.status == "Succes" && fileInpunt.files[0]){
             const publicacionId = data.publicacion._id
-            console.log(publicacionId);
             const formData = new FormData();
             formData.append('file0', fileInpunt.files[0]);
 
@@ -69,7 +68,7 @@ function Perfil() {
             <article className="perfil-usuario">
                 <div className="contenedor-perfil">
                     <div className="perfil-imagen">
-                        {auth.imagen != "default.png" && <img src={Global.url + "usuarios/avatar/" + auth.imagen} className="nav-imagen-usuario" />}
+                        {auth.imagen != "default.png" && <img src={auth.imagen} className="nav-imagen-usuario" />}
                         {auth.imagen == "default.png" && <img src={imagen} className="nav-imagen-usuario" />}
 
                     </div>

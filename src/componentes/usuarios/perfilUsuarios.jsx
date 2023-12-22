@@ -247,7 +247,6 @@ export const PerfilUsuarios = () => {
                                     </div>
                                     <article className='publicacion-imagen'>
                                         {pub.archivo && <img src={Global.url + "publicacion/media/" + pub.archivo} className='imagen-publicacion' />}
-
                                     </article>
 
                                 </div>

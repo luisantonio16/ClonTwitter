@@ -912,102 +912,20 @@
     width: 100%;
     margin: auto;
 }
-
-@media screen and (max-width: 630px) {
-    
-/*publicaion perfil*/
-.publicacion {
+.publicacion-imagen{
+    display: block;
     width: 90%;
-    
+    height: 320px;
 }
 
-.form-publicacion {
+.imagen-publicacion{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 
-/*Perfil del usuario*/
-.perfil {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-}
-
-.perfil-usuario {
-    width: 100%;
-}
-
-.contenedor-perfil {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.imagen-usuario {
-    width: 200px;
-}
-
-.perfil-datos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-    margin-left: 10px;
-}
-.perfil-nombre {
-    color: rgba(0, 0, 0, 0.747);
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.perfil-nombre-usuario {
-    color: #525355e7;
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.perfil-seguidos {
-    width: 100%;
-    gap: 5px;
-}
-
-
-    .publicaciones-container {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .publicaciones-titulo-usuario {
-        text-align: center;
-    }
-
-    .publicaciones-imagen-usuario {
-        margin: auto;
-        display: block;
-    }
-
-    .form-input {
-        position: relative;
-        width: 100%;
-        padding: 8px 12px;
-    }
-
-    .form-label {
-        top: 1.6rem;
-        left: 0.8rem;
-        font-size: 14px;
-
-    }
-    .form-input:focus~label,
-.form-input:not(:placeholder-shown)~label {
-    left: 1rem;
-    z-index: 1;
-    font-size: 0.8rem;
-}
-}
 
 .publicaciones-titulo {
     text-align: center;
@@ -1017,7 +935,7 @@
 
 .publicaciones-imagen-usuario {
     clip-path: circle(40.6% at 50% 50%);
-    max-width: 90px;
+    width: 100px;
     margin: auto;
     display: block;
 }
@@ -1138,4 +1056,220 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+
+@media screen and (max-width: 630px) {
+    
+/*publicaion perfil*/
+.publicacion {
+    width: 90%;
+    
+}
+
+.form-publicacion {
+    width: 100%;
+}
+
+
+/*Perfil del usuario*/
+.perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.perfil-usuario {
+    width: 100%;
+}
+
+.contenedor-perfil {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.imagen-usuario {
+    width: 200px;
+}
+
+.perfil-datos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin-left: 10px;
+}
+.perfil-nombre {
+    color: rgba(0, 0, 0, 0.747);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.perfil-nombre-usuario {
+    color: #525355e7;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.perfil-seguidos {
+    width: 100%;
+    gap: 5px;
+}
+
+
+    .publicaciones-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .publicaciones-titulo-usuario {
+        text-align: center;
+    }
+
+    .publicaciones-imagen-usuario {
+        margin: auto;
+        display: block;
+    }
+
+    .form-input {
+        position: relative;
+        width: 100%;
+        padding: 8px 12px;
+    }
+
+    .form-label {
+        top: 1.6rem;
+        left: 0.8rem;
+        font-size: 14px;
+
+    }
+    .form-input:focus~label,
+.form-input:not(:placeholder-shown)~label {
+    left: 1rem;
+    z-index: 1;
+    font-size: 0.8rem;
+}
+
+
+
+/*usuarios*/
+.usuarios-header{
+    width: 100%;
+}
+.usuarios-titulo {
+    color: #192beed8;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: center;
+
+}
+
+.usuarios-container {
+    width: 90%;
+    margin-top: 40px;
+}
+
+.usuario-container--informacion {
+    padding: 20px;
+    width: 100%;
+
+}
+
+.usuarios-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    
+}
+
+.usuario-imagen {
+    display: block;
+    object-fit: cover;
+    margin: auto;
+
+}
+.nav-imagen-usuario{
+    width: 100%;
+}
+
+.usuarios-informacion {
+    width: auto;
+    display: flex;
+    flex-flow: column wrap;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.usuario-nombre {
+    font-size: 16px;
+    color: #0d20eab4;
+    font-weight: 700;
+}
+
+.usuario-user {
+    color: #767786cc;
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.usuario-bio {
+    color: #000000a8;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 10px;
+
+
+}
+
+.usuario-buttons{
+    display: block;
+    width: 100%;
+
+}
+
+
+.btn-seguir {
+    display: block;
+    width: 80%;
+    max-width: 150px;
+    margin:15px auto;
+    font-size: 16px;
+    background-color: #2f3ff1d5;
+    color: #fff;
+    border: none;
+    transition: all 1ms ease;
+    border-radius: 5px;
+    text-align: center;
+    padding: 8px 12px;
+}
+
+.btn-seguir:hover {
+    background-color: rgba(10, 141, 5, 0.644);
+    color: #fff;
+}
+
+.btn-siguiendo {
+    width: 80%;
+    max-width: 150px;
+    margin:15px auto;
+   
+}
+
+.btn-siguiendo:hover {
+    background-color: rgba(230, 15, 15, 0.658);
+    color: #fff;
+
+}
 }
