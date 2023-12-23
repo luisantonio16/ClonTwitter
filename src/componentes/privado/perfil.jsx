@@ -42,6 +42,7 @@ function Perfil() {
             const publicacionId = data.publicacion._id
             const formData = new FormData();
             formData.append('file0', fileInpunt.files[0]);
+            console.log(formData);
 
             // hacemos la peticion ajax para subir la imagen de la publicacion
             const archivo = await fetch(Global.url+"publicacion/subirarchivo/"+publicacionId, {

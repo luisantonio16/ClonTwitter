@@ -1198,8 +1198,20 @@
     margin: auto;
 
 }
+.picture{
+    width: 50%;
+    height: 50%;
+    max-width: 300px;
+}
+.perfil-imagen{
+    width: 50%;
+    height: 50%;
+    max-width: 300px;
+}
 .nav-imagen-usuario{
     width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
 
 .usuarios-informacion {
