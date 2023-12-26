@@ -43,13 +43,7 @@ function iniciarSeccion() {
       //persitimos los datos en el localstorage
       localStorage.setItem('token', datos.token);
       localStorage.setItem('usuario', JSON.stringify(datos.usuario));
-
-      //alerta de que notificacion, para indicar que todo salio bien
-      Swal.fire(
-        'Welcome!',
-        datos.usuario.nombre,
-        'success'
-      )
+     
       //cargamos el usuario al
       setAuth(datos.usuario);
       setUsuario(false);

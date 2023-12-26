@@ -89,7 +89,7 @@ export const Publicaciones = () => {
     return (
         <>
             <article className='perfil-usuarios-publicaciones'>
-                <h2 className='publicaciones-titulo'>Publicacionees</h2>
+                <h2 className='publicaciones-titulo'>Publicaciones</h2>
                 {publicacion.map(pub => {
 
                     return (
